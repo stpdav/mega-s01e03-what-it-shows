@@ -1,0 +1,37 @@
+---
+layout: runbook
+title: '#4471 · three problems, not one'
+owner: support desk
+status: living
+reviewed: 2026-10-28
+signature: v1.eyJzdWIiOiIxNzU0IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTMyMDI2NzAsImV4cCI6MTc5MzI4OTA3MH0.TmRjkcOibxvc7Sr_QTgf1vzGgi74fkjsru0W6mZLG6Y
+---
+
+<script>
+  import CauseTable from '#lib/kb/CauseTable.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+  import Callout from '#lib/kb/Callout.svelte';
+</script>
+
+#4471 merged 412 reports about wrong dates into one ticket and marked it known. Read by tenant
+(locale and booking form), they are three different problems.
+
+| Problem | Reports |
+|---|---|
+| `parser`: dates read month first for day-first tenants | 374 |
+| `hint`: booking-v3 prints `MM/DD/YYYY` under the date field | 33 |
+| one-day move: off by one day, not a month flip | 5 |
+
+<Callout>
+The parser fix covers the first row only. The `hint` problem was closed as won't fix because
+"booking-v3 form retired", but alder.physio, copper.studio and pale.harbour still run booking-v3.
+</Callout>
+
+## What was merged
+
+<CauseTable ticket={4471} />
+
+The table above groups by tenant, so it counts the 5 one-day reports under `parser`. They are
+reported separately here: the desk read them as a one-day move (`desk-notes.json`).
+
+<RenderStamp {signature} />

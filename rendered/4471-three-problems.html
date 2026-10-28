@@ -1,0 +1,11 @@
+<!doctype html><meta charset=utf-8><title>#4471 · three problems, not one · support kb</title>
+<style>body{font:16px/1.6 system-ui,sans-serif;max-width:760px;margin:2rem auto;padding:0 16px;background:#fbfaf7;color:#1d1d1b}table{border-collapse:collapse;width:100%}td,th{border-bottom:1px solid #e3e0d8;padding:.35rem .5rem;text-align:left}aside{border-left:4px solid #2f6f5e;background:#eef5f2;padding:.5rem 1rem}.stamp{font:.85rem monospace;color:#6b6a66}</style>
+<p><small>support desk · kb</small></p><h1>#4471 · three problems, not one</h1><p><small>owner support desk · living · reviewed 2026-10-28</small></p>
+<p>#4471 merged 412 reports about wrong dates into one ticket and marked it known. Read by tenant (locale and booking form), they are three different problems.</p>
+<table><tr><th>Problem</th><th>Reports</th></tr><tr><td><code>parser</code>: dates read month first for day-first tenants</td><td>374</td></tr><tr><td><code>hint</code>: booking-v3 prints <code>MM/DD/YYYY</code> under the date field</td><td>33</td></tr><tr><td>one-day move: off by one day, not a month flip</td><td>5</td></tr></table>
+<aside>The parser fix covers the first row only. The <code>hint</code> problem was closed as won't fix because "booking-v3 form retired", but alder.physio, copper.studio and pale.harbour still run booking-v3.</aside>
+<h2>What was merged</h2><p><strong>412</strong> reports merged into #4471 · <strong>2</strong> causes</p>
+<table><tr><th>cause</th><th>reports</th><th>tagged as</th><th>tenants</th><th>seen</th><th></th></tr><tr><td><code>parser</code></td><td>379</td><td>parser ×356 · hint ×23</td><td>11</td><td>2026-04-01 → 2026-10-04</td><td>#4471</td></tr>
+<tr><td><code>hint</code></td><td>33</td><td>hint ×18 · parser ×15</td><td>3</td><td>2026-04-17 → 2026-09-22</td><td>not this ticket - no ticket of its own</td></tr></table>
+<p>The table above groups by tenant, so it counts the 5 one-day reports under <code>parser</code>. They are reported separately here: the desk read them as a one-day move (<code>desk-notes.json</code>).</p>
+<p class=stamp>desk ref <b>DR-7EXM-CV6R</b></p>
